@@ -1,4 +1,4 @@
-public class LinearCongruentialGenerator implements IncompatibleRandomInterface {
+public class LinearCongruentialGenerator implements IncompatibleRandomInterface, RandomInterface {
 // Generates pseudo-random numbers using:
 // X(n+1) = (aX(n) + c) (mod m)
 // for suitable a, c and m. The numbers are "normalised" to the range
@@ -42,9 +42,12 @@ public class LinearCongruentialGenerator implements IncompatibleRandomInterface 
 
   }
 
+  public double next() {
+    return this.getNextNumber();
+  }
+
   public double getNextNumber() {
     seed = (a * seed + c) % m;
     return (double) seed/m;
   }
 }
-  
