@@ -41,7 +41,7 @@ public class LinearCongruentialGenerator implements IncompatibleRandomInterface,
     System.out.println("a: " + temp.a + "  c: " + temp.c + "  m: " + temp.m + "  seed: " + temp.seed);
 
   }
-
+  // NEW CODE
   public double next() {
     return this.getNextNumber();
   }
@@ -50,4 +50,5 @@ public class LinearCongruentialGenerator implements IncompatibleRandomInterface,
     seed = (a * seed + c) % m;
     return (double) seed/m;
   }
+  // END NEW CODE
 }
